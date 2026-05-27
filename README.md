@@ -9,7 +9,7 @@
 
 **[Yujie Wei<sup>1</sup>](https://weilllllls.github.io), [Xinyu Liu<sup>2</sup>](https://scholar.google.com/citations?user=kgRjFN8AAAAJ), [Shiwei Zhang<sup>3</sup>](https://scholar.google.com/citations?user=ZO3OQ-8AAAAJ), [Hangjie Yuan<sup>4</sup>](https://jacobyuan7.github.io), [Jinbo Xing<sup>3</sup>](https://doubiiu.github.io/), [Zhekai Chen<sup>5</sup>](https://scholar.google.com/citations?user=_eZWcIMAAAAJ), [Xiang Wang<sup>3</sup>](https://scholar.google.com/citations?user=cQbXvkcAAAAJ), [Haonan Qiu<sup>6</sup>](http://haonanqiu.com/), [Rui Zhao<sup>7</sup>](https://ruizhaocv.github.io/), [Yutong Feng<sup>3</sup>](https://scholar.google.com/citations?user=mZwJLeUAAAAJ), [Ruihang Chu<sup>3</sup>](https://ruihang-chu.github.io/), [Yingya Zhang<sup>3</sup>](https://scholar.google.com.sg/citations?user=16RDSEUAAAAJ), [Yike Guo<sup>2</sup>](https://cse.hkust.edu.hk/admin/people/faculty/profile/yikeguo), [Xihui Liu<sup>5</sup>](https://xh-liu.github.io/), [Hongming Shan<sup>1</sup>](http://hmshan.io)**
 
-<sup>1</sup>Fudan University &nbsp; <sup>2</sup>The Hong Kong University of Science and Technology &nbsp; <sup>3</sup>Tongyi Lab, Alibaba Group &nbsp; <sup>4</sup>Zhejiang University &nbsp; <sup>5</sup>MMLab, The University of Hong Kong &nbsp; <sup>6</sup>Nanyang Technological University &nbsp; <sup>7</sup>National University of Singapore
+<sup>1</sup>Fudan University &nbsp; <sup>2</sup>The Hong Kong University of Science and Technology &nbsp; <sup>3</sup>Tongyi Lab, Alibaba Group <br> <sup>4</sup>Zhejiang University &nbsp; <sup>5</sup>MMLab, The University of Hong Kong <br> <sup>6</sup>Nanyang Technological University &nbsp; <sup>7</sup>National University of Singapore
 
 
 </div>
@@ -21,7 +21,7 @@ While large-scale diffusion models have revolutionized video synthesis, achievin
 
 ## 🔥 Updates
 
-- __[2026.05]__: Release the inference code and SFT checkpoint on [Hugging Face](https://huggingface.co/weilllllls/DreamVideo-Omni) and [ModelScope](https://modelscope.cn/models/weilllllls/DreamVideo-Omni).
+- __[2026.05]__: Release the inference code and SFT checkpoint.
 - __[2026.03]__: Release the [paper](https://arxiv.org/abs/2603.12257) of DreamVideo-Omni.
 
 
@@ -106,7 +106,7 @@ Video generation is performed via `infer.py`. Each example case under `examples/
 **Case 0 — multi-reference**
 
 ```bash
-python infer.py \
+CUDA_VISIBLE_DEVICES=0 python infer.py \
   --checkpoint ./checkpoints/dreamvideo_omni_sft.safetensors \
   --local_model_path ./models \
   --case_dir examples/0 \
@@ -119,7 +119,7 @@ python infer.py \
 **Case 1 — motion (tracks + bbox)**
 
 ```bash
-python infer.py \
+CUDA_VISIBLE_DEVICES=1 python infer.py \
   --checkpoint ./checkpoints/dreamvideo_omni_sft.safetensors \
   --local_model_path ./models \
   --case_dir examples/1 \
@@ -132,7 +132,7 @@ python infer.py \
 **Case 2 — identity + motion (ref + tracks + bbox)**
 
 ```bash
-python infer.py \
+CUDA_VISIBLE_DEVICES=2 python infer.py \
   --checkpoint ./checkpoints/dreamvideo_omni_sft.safetensors \
   --local_model_path ./models \
   --case_dir examples/2 \

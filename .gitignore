@@ -7,3 +7,5 @@ checkpoints/*.safetensors
 checkpoints/*.pth
 checkpoints/*.bin
 *.sh
+checkpoints/
+diffsynth.egg-info/

@@ -1,14 +1,15 @@
 import os
 from setuptools import setup, find_packages
-import pkg_resources
 
-                               
 requirements_path = os.path.join(os.path.dirname(__file__), "requirements.txt")
 
-                                                  
 if os.path.exists(requirements_path):
-    with open(requirements_path, 'r') as f:
-        install_requires = [str(r) for r in pkg_resources.parse_requirements(f)]
+    with open(requirements_path, "r", encoding="utf-8") as f:
+        install_requires = [
+            line.strip()
+            for line in f
+            if line.strip() and not line.strip().startswith("#")
+        ]
 else:
     install_requires = []
 
