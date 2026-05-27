@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+models/
+outputs/
+*.mp4
+checkpoints/*.safetensors
+checkpoints/*.pth
+checkpoints/*.bin
+*.sh
