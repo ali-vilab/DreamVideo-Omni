@@ -98,7 +98,7 @@ Video generation is performed via `infer.py`. Each example case under `examples/
 |------|-----------|--------------|------|
 | **0** | `examples/0` | **Multi-reference** — two reference images, text prompt only (no tracks / bbox) | `555362` |
 | **1** | `examples/1` | **Motion** — trajectory + per-frame `frames_info` bbox (no reference image) | `42` |
-| **2** | `examples/2` | **Identity + motion** — one reference image + trajectory + per-frame bbox | `42` |
+| **2** | `examples/2` | **Identity + motion** — one reference image + trajectory + per-frame bbox | `45` |
 
 
 ### Commands
@@ -138,7 +138,7 @@ CUDA_VISIBLE_DEVICES=2 python infer.py \
   --case_dir examples/2 \
   --output_path outputs/2.mp4 \
   --num_inference_steps 50 \
-  --seed 42 \
+  --seed 45 \
   --skip_download
 ```
 
